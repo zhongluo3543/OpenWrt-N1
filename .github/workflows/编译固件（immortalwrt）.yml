@@ -61,7 +61,12 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$USER /workdir
         # 清理多余文件，腾出磁盘空间
-        docker rmi $(docker images -q)
+        if docker image ls -q | grep -q .; then
+            docker image ls -q | sort -u | xargs -r docker rmi -f
+        else
+        echo "No Docker images to remove, skipping."
+        fi
+        # docker rmi $(docker images -q)
         # sudo -E apt-get remove -y --purge azure-cli ghc zulu* llvm* firefox google* dotnet* powershell mysql* php* android*
         # sudo rm -rf /etc/mysql /etc/php /swapfile
 
