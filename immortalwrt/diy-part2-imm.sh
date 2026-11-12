@@ -37,9 +37,9 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-unblocknetease
 
 
 # 修复 v2ray-geodata 依赖问题
-rm -rf feeds/packages/net/v2ray-geodata
-rm -rf package/feeds/packages/v2ray-geodata
-git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+#rm -rf feeds/packages/net/v2ray-geodata
+#rm -rf package/feeds/packages/v2ray-geodata
+#git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # 修复循环依赖问题
 # 修复 luci-app-bypass 循环依赖
@@ -103,7 +103,7 @@ sed -i 's#mount -t cifs#mount.cifs#g' feeds/luci/applications/luci-app-cifs-moun
 # svn export https://github.com/sbwml/packages_lang_golang/trunk feeds/packages/lang/golang
 
 # mosdns
-find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
-find ./ | grep Makefile | grep mosdns | xargs rm -f
-git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/geodata
+#find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+#find ./ | grep Makefile | grep mosdns | xargs rm -f
+#git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
+#git clone https://github.com/sbwml/v2ray-geodata package/geodata
