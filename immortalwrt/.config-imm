@@ -51,7 +51,7 @@ CONFIG_TARGET_PROFILE="Default"
 CONFIG_TARGET_ARCH_PACKAGES="aarch64_cortex-a53"
 CONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe -mcpu=cortex-a53"
 CONFIG_CPU_TYPE="cortex-a53"
-CONFIG_LINUX_5_4=y
+#CONFIG_LINUX_5_4=y
 CONFIG_DEFAULT_base-files=y
 CONFIG_DEFAULT_block-mount=y
 CONFIG_DEFAULT_busybox=y
@@ -80,7 +80,7 @@ CONFIG_DEFAULT_luci-lib-ipkg=y
 CONFIG_DEFAULT_mkf2fs=y
 CONFIG_DEFAULT_mtd=y
 CONFIG_DEFAULT_netifd=y
-CONFIG_DEFAULT_opkg=y
+#CONFIG_DEFAULT_opkg=y
 CONFIG_DEFAULT_ppp=y
 CONFIG_DEFAULT_ppp-mod-pppoe=y
 CONFIG_DEFAULT_procd=y
@@ -104,6 +104,13 @@ CONFIG_ARCH_64BIT=y
 CONFIG_VIRTIO_SUPPORT=y
 CONFIG_aarch64=y
 CONFIG_ARCH="aarch64"
+
+CONFIG_USE_APK=y
+CONFIG_LINUX_6_18=y
+
+CONFIG_PACKAGE_luci-app-package-manager=y
+# CONFIG_PACKAGE_opkg is not set
+# CONFIG_PACKAGE_luci-app-opkg is not set
 
 #
 # Target Images
@@ -1709,6 +1716,45 @@ CONFIG_PACKAGE_nginx=y
 CONFIG_PACKAGE_nginx-util=y
 # CONFIG_PACKAGE_tang is not set
 # end of Extra packages
+
+CONFIG_PACKAGE_honk=y
+CONFIG_PACKAGE_luci-app-honk=y
+CONFIG_PACKAGE_luci-lib-daeuniverse=y
+CONFIG_PACKAGE_vmlinux-btf-builtin=y
+
+CONFIG_PACKAGE_kmod-sched-core=y
+CONFIG_PACKAGE_kmod-sched-bpf=y
+CONFIG_PACKAGE_kmod-veth=y
+CONFIG_PACKAGE_kmod-nft-core=y
+CONFIG_PACKAGE_kmod-nft-queue=y
+CONFIG_PACKAGE_kmod-nfnetlink-queue=y
+CONFIG_PACKAGE_kmod-nf-conntrack=y
+
+CONFIG_PACKAGE_v2ray-geoip=y
+CONFIG_PACKAGE_v2ray-geosite=y
+CONFIG_PACKAGE_ca-bundle=y
+CONFIG_PACKAGE_libstdcpp=y
+
+CONFIG_KERNEL_DEBUG_INFO=y
+CONFIG_DEBUG_INFO=y
+CONFIG_DEBUG_INFO_BTF=y
+CONFIG_BPF_TOOLCHAIN_BUILD_LLVM=y
+CONFIG_HAS_BPF_TOOLCHAIN=y
+
+CONFIG_PACKAGE_kmod-brcmfmac=y
+CONFIG_PACKAGE_kmod-brcmutil=y
+CONFIG_PACKAGE_kmod-cfg80211=y
+CONFIG_PACKAGE_kmod-mac80211=y
+
+CONFIG_PACKAGE_brcmfmac-firmware-43455-sdio-phicomm-n1=y
+
+CONFIG_PACKAGE_kmod-rtw88=y
+CONFIG_PACKAGE_kmod-rtw88-usb=y
+CONFIG_PACKAGE_kmod-rtw88-8821c=y
+CONFIG_PACKAGE_kmod-rtw88-8821cu=y
+
+CONFIG_PACKAGE_wpad-mesh-openssl=y
+
 
 #
 # Firmware
