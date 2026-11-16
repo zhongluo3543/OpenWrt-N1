@@ -14,14 +14,15 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # 添加feed源
-echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
+# echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
+sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
 # small 提供 luci-app-openclash（与 vernesong master 同版同步）及代理核心。
 # PassWall/PassWall2/SSR Plus+ 虽已不再启用，但 small 必须保留，否则 OpenClash
 # 本体无法挂载、代理核心依赖无法解析（package/install 阶段直接 Error 255）。
 # 用它替换 passwall_packages，避免两源并存造成 17 个同名包重复定义
 # （opkg Error 255 的来源）。
-echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
-
+# echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
+rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
 # 注释掉可能有问题的源
 # echo 'src-git fichenx https://github.com/fichenx/openwrt-package' >> feeds.conf.default
